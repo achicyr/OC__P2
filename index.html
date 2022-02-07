@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booki</title>
+    <link rel="icon" href="assets/images/logo/Booki.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="assets/normalize.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@1..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="root"></div>
+    <hr>
+    <h1>Step0:</h1>
+    <ul>
+        <li>html
+            <ol>
+                <li>générer code pour intégrer fontawesome, googlefont, etc</li>
+                <li>un snpipet générique "ee" pour générer "{${1:text}}[${2:attr}="$3"]</li>
+                <li>faire pareil mais plus spécifique pour chaque type de balises souvent utilisées</li>
+                <li>générer un menu (plusieurs variantes)<br/>
+                    générer une balise list (avec ou sans icone
+                </li>
+                <li>générer une balise picture</li>
+                <li>générer une balise hgroup</li>
+                <li>générer une card</li>
+                <li>générer une balise &lt;i/&gt; d'icone fontawesome</li>
+            </ol>
+        </li>
+        <li>css
+            <ul>
+                <li>flex</li>
+                <li>grid</li>
+                <li>ensemble de regle pour centrer un élément</li>
+                <li>ensemble de règle pour gérer les margin internes et/ou externes</li>
+            </ul>
+        </li>
+        <li>js
+            <ul>
+                <li>améliorer snippet import</li>
+                <li>générer les import obligatopire pour chaque script react</li>
+                <li>générer les import pour les librairies les plus utilisées (jquery, underscore, ..)</li>
+                <li>générer function component avec tous les hook</li>
+                <li>générer class component avec tous les cycle de vie</li>
+                <li>générer toute une script pour un function/class component (import, export, déclaration(function/class) et cycle_de_vie/hooks, return statement</li>
+            </ul>
+        </li>
+    </ul>
+    <!-- <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <i class="fas fa-money-bill-wave"></i>
+        <i class="fas fa-male"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-dog"></i>
+        <i class="fas fa-chart-line"></i>
+        <i class="fas fa-info"></i>
+    </div> -->
+    <!-- header>(picture>img[src="assets/images/logo/Booki.png"]+source)+menu>(li.active>a{Hébergements})*2 -->
+<!--
+    <header>
+        <picture>
+            <img src="assets/images/logo/Booki.png" alt="logo">
+            <source>
+        </picture>
+        <menu>
+            <li class="active"><a href="#hebergements">Hébergements</a></li>
+            <li><a href="#activites" class="active">Activités</a></li>
+        </menu>
+    </header>
+-->
+
+    <!-- nav>h1{Trouvez votre hébergement pour des vacances de rêve}+h2{En plein centre ville ou en pleine nature}+(form>i.fas.fa-map+input[placeholder="Marseille, France”]+button{Rechercher})+(ul>li.safe{Filtres}+(li>i.fas.fa-___+span{Économique})*4)+div.indices>i.fas.fa-info+span{Plus de 500 logements sont disponibles dans cette ville} -->
+<!--
+    <nav>
+        <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+        <h2>En plein centre ville ou en pleine nature</h2>
+        <form>
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" placeholder="Marseille, France">
+            <button>Rechercher</button>
+        </form>
+        <ul>
+            <li class="safe">Filtres</li>
+            <li><i class="fas fa-money-bill-wave"></i><span>Économique</span></li>
+            <li><i class="fas fa-male"></i><span>Économique</span></li>
+            <li><i class="fas fa-heart"></i><span>Économique</span></li>
+            <li><i class="fas fa-dog"></i><span>Économique</span></li>
+        </ul>
+        <div class="indices"><i class="fas fa-info"></i><span>Plus de 500 logements sont disponibles dans cette ville</span></div>
+    </nav>
+-->
+    
+    <!-- main
+    section.hebergements>h3{Hébergements à Marseille}
+        +ul>li>a>img+h4{Auberge La Cannebière}+p{Nuit à partir de 25€}+div.star>i.fas.fa-star
+    section.hebergements>h3{Les plus populaires}>i.fas.fa-chart
+        +ul>li>a>img+h4{Hôtel Le soleil du matin}+p{Nuit à partir de 25€}+div.star>i.fas.fa-star
+    section.hebergements>h3{Activités à Marseille}
+        +ul>li>a>img+h4{Vieux Port} -->
+
+    <!-- main>section.hebergements>h3{Hébergements à Marseille}+(ul>(li>a[href="#" alt="text alternatif"]>img[src="assets/images/hebergements/4_small/01.jpg"]+h4{Auberge La Cannebière}+p{Nuit à partir de 25€}+div.star>i.fas.fa-star*5)*6)+a{Afficher plus} -->
+<!--
+    <main>
+        <section class="hebergements">
+            <h3>Hébergements à Marseille</h3>
+            <ul>                
+                <!-- (li>a[href="#" alt="text alternatif"]>img[src="assets/images/hebergements/4_small/0$.jpg" alt="texte alternatif"]+h4{Auberge La Cannebière}+p{Nuit à partir de 25€}+div.star>i.fas.fa-star*4+i.fas.fa-star.empty)*5 --
+                    >
+                <li>
+                    <a href="#" alt="text alternatif">
+                        <img src="assets/images/hebergements/4_small/01.jpg" alt="texte alternatif">
+                        <h4>Auberge La Cannebière</h4>
+                        <p>Nuit à partir de 25€</p>
+                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star empty"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="text alternatif">
+                        <img src="assets/images/hebergements/4_small/02.jpg" alt="texte alternatif">
+                        <h4>Auberge La Cannebière</h4>
+                        <p>Nuit à partir de 25€</p>
+                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star empty"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="text alternatif">
+                        <img src="assets/images/hebergements/4_small/03.jpg" alt="texte alternatif">
+                        <h4>Auberge La Cannebière</h4>
+                        <p>Nuit à partir de 25€</p>
+                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star empty"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="text alternatif">
+                        <img src="assets/images/hebergements/4_small/04.jpg" alt="texte alternatif">
+                        <h4>Auberge La Cannebière</h4>
+                        <p>Nuit à partir de 25€</p>
+                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star empty"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="text alternatif">
+                        <img src="assets/images/hebergements/4_small/05.jpg" alt="texte alternatif">
+                        <h4>Auberge La Cannebière</h4>
+                        <p>Nuit à partir de 25€</p>
+                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star empty"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/images/hebergements/4_small/06.jpg" alt="">
+                        <h4>Auberge La Cannebière</h4>
+                        <p>Nuit à partir de 25€</p>
+                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star empty"></i></div>
+                    </a>
+                </li>
+            </ul>
+            <a href="">Afficher plus</a>
+        </section>
+        
+        
+        <!-- section.hebergements>(h3{Les plus populaires}>i.fas.fa-chart)+ul>li>a>img+h4{Hôtel Le soleil du matin}+p{Nuit à partir de 25€}+div.star>i.fas.fa-star*5 --
+            >
+        <section class="populaires">
+            <h3>Les plus populaires<i class="fas fa-chart-line"></i></h3>
+            <ul>
+                <li>
+                    <a href="#" alt="text alternatif">
+                        <img src="assets/images/hebergements/4_small/01.jpg" alt="texte alternatif">
+                        <h4>Hôtel Le soleil du matin</h4>
+                        <p>Nuit à partir de 25€</p>
+                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star empty"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="text alternatif">
+                        <img src="assets/images/hebergements/4_small/02.jpg" alt="texte alternatif">
+                        <h4>Hôtel Le soleil du matin</h4>
+                        <p>Nuit à partir de 25€</p>
+                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star empty"></i></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" alt="text alternatif">
+                        <img src="assets/images/hebergements/4_small/03.jpg" alt="texte alternatif">
+                        <h4>Hôtel Le soleil du matin</h4>
+                        <p>Nuit à partir de 25€</p>
+                        <div class="star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star empty"></i></div>
+                    </a>
+                </li>
+                <!-- li>a[href="#" alt="text alternatif"]>img[src="assets/images/hebergements/4_small/0$.jpg" alt="texte alternatif"]+h4{Hôtel Le soleil du matin}+p{Nuit à partir de 25€}+div.star>i.fas.fa-star*4+i.fas.fa-star.empty --
+                    >
+            </ul>
+        </section>
+        
+        
+        <!-- section.hebergements>h3{Activités à Marseille}+ul>li>a>img+h4{Vieux Port} --
+            >
+        <section class="activites">
+            <h3>Activités à Marseille</h3>
+            <ul>
+                <li class="full">
+                    <a href="#">
+                        <img src="assets/images/activites/4_small/01.jpg" alt="">
+                        <h4>Vieux Port</h4>
+                    </a>
+                </li>
+                <li class="mid">
+                    <a href="#">
+                        <img src="assets/images/activites/4_small/02.jpg" alt="">
+                        <h4>Vieux Port</h4>
+                    </a>
+                </li>
+                <li class="mid">
+                    <a href="#">
+                        <img src="assets/images/activites/4_small/03.jpg" alt="">
+                        <h4>Vieux Port</h4>
+                    </a>
+                </li>
+                <li class="full">
+                    <a href="#">
+                        <img src="assets/images/activites/4_small/04.jpg" alt="">
+                        <h4>Vieux Port</h4>
+                    </a>
+                </li>
+                <li class="mid">
+                    <a href="#">
+                        <img src="assets/images/activites/4_small/05.jpg" alt="">
+                        <h4>Vieux Port</h4>
+                    </a>
+                </li>
+                <li class="mid">
+                    <a href="#">
+                        <img src="assets/images/activites/4_small/06.jpg" alt="">
+                        <h4>Vieux Port</h4>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+-->
+<!--
+    <footer>
+        <!-- footer>(ul>(li.titre>h5{À propos})+li{fonctionnement du site}*3)*3 --
+            >
+        <ul>
+            <li class="titre">
+                <h5>À propos</h5>
+            </li>
+            <li>fonctionnement du site</li>
+            <li>fonctionnement du site</li>
+            <li>fonctionnement du site</li>
+        </ul>
+        <ul>
+            <li class="titre">
+                <h5>À propos</h5>
+            </li>
+            <li>fonctionnement du site</li>
+            <li>fonctionnement du site</li>
+            <li>fonctionnement du site</li>
+        </ul>
+        <ul>
+            <li class="titre">
+                <h5>À propos</h5>
+            </li>
+            <li>fonctionnement du site</li>
+            <li>fonctionnement du site</li>
+            <li>fonctionnement du site</li>
+        </ul>
+    </footer>
+-->
+    <script src="index.js"></script>
+</body>
+</html>

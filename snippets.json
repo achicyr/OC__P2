@@ -1,0 +1,97 @@
+{
+    "a enhanced": {
+        "prefix": "_a",
+        "body": [
+            "<a href='${1:#}' title='${2:lorem}'>${3:lorem}</a>"
+        ]
+    },		
+    "description": "AMÉLIORER emmet pour le rendu de la certaines balises",
+
+    "img enhnced": {
+		"prefix": ["_img", "img_enhnced"],
+		"body": [
+			"<img src='${1:assets/images/' />"
+		],
+		"description": "AMÉLIORER emmet pour le rendu de la certaines balises"
+	},
+    "hgroup": {
+		"prefix": "_h1",
+		"body": [
+			"<hgroup>...</hgroup>"
+		],
+		"description": "AMÉLIORER emmet pour le rendu de la certaines balises",
+	},
+	"main_menu v1": {
+		"prefix": ["_menu","menu"],
+		"body": [
+			"<menu>",
+			    "<li>",
+			        "<a>",
+			            "${3:<i.fas.fa-${4:chart}></i>}",
+                        "${1:<span>$2</span>",
+                    "</a>",
+                "</li>",
+			"</menu>"
+		],
+		"description": "Générer code pour intégrer google font"
+	},
+	"main_menu v2": {
+		"prefix": ["_menu_v2","menu_v2"],
+		"body": [
+			"<menu>",
+			    "<li>",
+			        "<a>",
+			            "${3:<i.fas.fa-${4:chart}></i>}",
+                        "........................",
+                        "........................",
+                        "........................",
+                        "${1:<span>$2</span>",
+                    "</a>",
+                "</li>",
+			"</menu>"
+		],
+		"description": "Générer code pour intégrer google font"
+	},
+	"list": {
+		"prefix": ["_list","list","listUl"],
+		"body": [
+			"<ul>",
+			    "<li>",
+			        "<a>",
+			            "${3:<i.fas.fa-${4:chart}></i>}",
+                        "${1:<span>$2</span>",
+                    "</a>",
+                "</li>",
+			"</ul>"
+		],
+		"description": "Générer code pour intégrer google une list font"
+	},
+	"listOl": {
+		"prefix": ["_list","list","listOl"],
+		"body": [
+			"<ul>",
+			    "<li>",
+			        "<a>",
+			            "${3:<i.fas.fa-${4:chart}></i>}",
+                        "${1:<span>$2</span>",
+                    "</a>",
+                "</li>",
+			"</ul>"
+		],
+		"description": "Générer code pour intégre une list"
+	},
+	"picture": {
+		"prefix": ["pics","_pics","picture"],
+		"body": [
+			"<ul>",
+			"    <li>",
+			"        <a>",
+			"            ${3:<i.fas.fa-${4:chart}></i>}",
+            "            ${1:<span>$2</span>",
+            "        </a>",
+            "    </li>",
+			"</ul>"
+		],
+		"description": "Générer code pour intégre une list"
+	}
+}
