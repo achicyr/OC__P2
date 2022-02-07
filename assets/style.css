@@ -1,0 +1,105 @@
+/* 1 - DÉFINIR LES ELEMENTS DE LA CHARTE GRAPHIQUE EN TOUT PREMIER (variables, fonts, animations, tc) */
+/* 2 - APPLIQUER LA CHARTE GRAPHIQUE AUX ÉLÉMENTS CONCERNÉS */
+/* 3 - PUIS VIENT LES ÉLÉMENTS HTML RACINE (je rappelle la structure classique d'un layout HTML: header+nav+main+aside+footer */
+/* 4 - ENFIN AJUSTEMENTS, ET COMPOTEMENTS PARTICULIERS */
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+
+/* 1) VARIABLES DE LA CHARTE GRAPHIQUE P2 */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@503&display=swap');
+:root{
+    --bleu: #0065FC;
+    --bleuClair: #fcfcfc;
+    --gris: #ebebeb;
+    font-family: Raleway;
+}
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+/* 2) APPLIQUER LA CHARTE GRAPHIQUE SUR LES ÉLÉMENTS HTML DE LA PAGE CONCERNEE */
+/* bleu */
+body>header>menu,
+body>nav>div>input[type="submit"],
+body>nav>ul>li>i,
+body>nav>p>i,
+li>div.star
+{color:var(--bleu)}
+body>nav>ul>li>i{background:var(--bleuClair)}
+/* bleu clair */
+
+/* gris */
+body>nav>ul>li{border: 2px solid var(--gris);}
+body>nav>div>i{background:var(--gris);}
+body>nav>p,
+main>article>ul>li>p
+{color:var(--gris);}
+/* silver */
+.active{color:var(--gris);}
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+/* 3) STYLISER LES DIFFERENTS ÉLÉMENTS RACINE DE LA PAGE */
+/* EN PARTANT DU HAUT VERS LE BAS */
+/*** elements normalize ***/
+*{box-sizing: border-box;}
+body{}
+ul, menu{list-style:none;padding:0;}
+/*** HEADER ***/
+body>header{}
+body>header{display:flex;justify-content: space-between;}
+/* header>img{} */
+/* header>h1{} */
+body>header>menu{display:flex;margin:0;}
+body>header>menu>li{}
+body>header>menu>li>a{padding: 1.5em;color:var(--bleu);display:block;height:100%;text-decoration:none;line-height:3rem;}
+body>header>menu>li.active>a{color:var(--gris);}
+body>header>menu>li>a:hover{border-top:solid;}
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+/*** NAV ***/
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+/*** MAIN ***/
+
+
+
+
+
+
+
+/*** SECTION ***/
+
+
+/*** FOOTER ***/

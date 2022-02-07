@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Réservia</title>
+        <link rel="stylesheet" href="assets/normalize.css"> <!-- IF YOU DON'T KNOW WHAT IS normalize.css SEARCH FOR "normalize css" ON GOOFGLE PLEASE-->
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="https://kit.fontawesome.com/af00583391.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- 
+            - IL S'AGIT DANS UN 1ER TEMPS DE REPERER LES DIFFERENTS BLOCS QUE LA PAGE(le layout) CONTIENT 
+            (généralement un layout est de la form suivante: html>head+body>(header+nav+main+aside+footer) <= les élements de bloc correspondentaux élements HTML dans la parenthèse)
+            - UNE FOIS CES ELEMENTS IDENTIFIER, IL FAUT LES REPRESENTER EN NOTEMMENT DE "SELECTION CSS"
+            (pour le header cela donnerai généralement:             header>section>img.logo[src="url/image.png"]+h1{mon slogan}+menu>(li>a[href="#"]{menu-item})*3          )
+            - UNE FOIS LE RESULTAT POUR LES DIFFERENT BLOC JUGÉ SUFFISANT (tous les elements principaux à considérer apparaissent), ON GENÈRE LE HTML À PARTIR DE CES "selection css" 
+            - IL EST TEMPS DE REALISER LA STYLISATION DES DIFFERENTS CONTENUE, DU PLUS HAUT ÉLÉMENT AU PLUS BAS DE LA PAGE
+         -->
+
+         <!-- header>section>img.logo[src="url/image.png"]+h1{mon slogan}+menu>(li>a[href="#"]{menu-item})*3 -->
+         <header>
+            <img src="assets/images/logo/Reservia.svg" alt="mon slogan" class="logo">
+            <!-- <h1>Mon slogan</h1> -->
+            <menu>
+            <li><a href="#">Hébergements</a></li>
+            <li class="active"><a href="#">Activités</a></li>
+            <li><a href="#">S'inscrire</a></li>
+            </menu>
+         </header>
+
+
+         <!-- nav>h2+p+(div>i+input+input[type="submit" value="Rechercher"])+ul>span{Filtres: }+(li>i+input)*4 -->
+         <nav>
+             <h2>Trouvez votre Hébergements pour ces vacances de rêve</h2>
+             <!-- <p>En plein centre ville ou en pleine nature</p> -->
+             <p>En plein centre ville ou en pleine nature</p>
+             <form>
+                 <i class="fas fa-map-marker-alt"></i>
+                 <input placeholder="Marseille, France" class="user_input___filtre" type="text"/>
+<!-- AJOUT D'UNE CLASSE 'user_input___filtre' SUR LES ELEMENTS LES PLUS SENSIBLES AVEC LESQUELLES L'UTILISATEUR POURRA INTERAGIR AVEC -->
+                 <input type="submit" value="Rechercher"/>
+            </form>
+             <ul>
+                 <span>Filtres: </span>
+                 <li><i class="fa fa-map"></i><span>Économique</span></li>
+                 <li><i class="fa fa-snowman"></i><span>Familial</span></li>
+                 <li><i class="fa fa-heart"></i><span>Romantique</span></li>
+                 <li><i class="fa fa-dog"></i><span>Animaux autorisés</span></li>
+                 <div>&nbsp;</div>
+             </ul>
+             <!-- p{Plus de 500 logements sont disponibles dans cette ville}>i.fa.fa-info-circle -->
+             <p>
+                 <i class="fa fa-info"></i> 
+                 Plus de 500 logements sont disponibles dans cette ville
+             </p>
+         </nav>
+
+
+
+
+        <!-- aside>(h2+i)+ul>(li>img+h4+p+div>i*5)*3 -->
+        <aside>
+            <h2>Les plus populaires <i class="fas fa-chart-line"></i></h2>
+            <ul class="annonces">
+                <li>
+                    <img width="150" src="assets/images/hebergements/3_medium/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="">
+                    <div>
+                        <h4>Hôtel tout bleu et blanc</h4>
+                        <p>Nuît à partir de <b>68€</b></p>
+                        <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                    </div>
+                </li>
+                <li>
+                    <img width="150" src="assets/images/hebergements/3_medium/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="">
+                    <div>
+                        <h4>Au coeur de l'eau chambre d'hôtes</h4>
+                        <p>Nuît à partir de <b>71€</b></p>
+                        <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                    </div>
+                </li>
+                <li>
+                    <img width="150" src="assets/images/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg" alt="">
+                    <div>
+                        <h4>Hôtel le soleil du matin</h4>
+                        <p>Nuît à partir de <b>128€</b></p>
+                        <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+
+
+
+         
+         <!-- main>(article>h2+(ul>(li>img+h4+p+div>i.fas.fa-star*5)*6)+a) -->
+         <main>
+            <h2>Hébergements à Marseille</h2>
+            <ul class="annonces">
+                <li>
+                    <img height='125' src="assets/images/hebergements/3_medium/1.jpg" alt="">
+                    <h4>Auberge la Cannebière</h4>
+                    <p>Nuît à partir de <b>25€</b></p>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star safe"></i></p>
+                </li>
+                <li>
+                    <img height='125' src="assets/images/hebergements/3_medium/reisetopia-B8WIgxA_PFU-unsplash.jpg" alt="">
+                    <h4>Hôtel du port</h4>
+                    <p>Nuît à partir de <b>52€</b></p>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                </li>
+                <li>
+                    <img height='125' src="assets/images/hebergements/3_medium/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="">
+                    <h4>Hôtel les mouettes</h4>
+                    <p>Nuît à partir de <b>76€</b></p>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star safe"></i></p>
+                </li>
+                <li>
+                    <img height='125' src="assets/images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="">
+                    <h4>Hôtel de la mer</h4>
+                    <p>Nuît à partir de <b>46€</b></p>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star safe"></i><i class="fas fa-star safe"></i></p>
+                </li>
+                <li>
+                    <img height='125' src="assets/images/hebergements/3_medium/fred-kleber-gTbaxaVLvsg-unsplash.jpg" alt="">
+                    <h4>Auberge le Panier</h4> <b>23€</b></p>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star safe"></i></p>
+                </li>
+                <li>
+                    <img height='125' src="assets/images/hebergements/3_medium/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="">
+                    <h4>Hôtel chez Amina</h4>
+                    <p>Nuît à partir de <b>96€</b></p>
+                    <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                </li>
+            </ul>
+            <a href="#">Afficher plus</a>
+        </main>
+
+        
+        
+
+
+        <!-- section.bloc2>h2+(div>img+h4)*6 -->
+        <section class="bloc2">
+            <h2>Activité à Marseille</h2>
+            <ul>
+                <li>
+                    <img height="500" src="assets/images/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="">
+                    <h4>Vieux port</h4>
+                </li>
+                <li class="fh">
+                    <img height="200" src="assets/images/activites/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="">
+                    <h4>Fort de Pomègues</h4>
+                </li>
+                <li class="f">
+                    <img src="assets/images/activites/3_medium/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="">
+                    <h4>Îles du Frioul</h4>
+                </li>
+                <li>
+                    <img height="500" src="assets/images/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="">
+                    <h4>Parc Naturel des Calanques</h4>
+                </li>
+                <li class="fh">
+                    <img src="assets/images/activites/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="">
+                    <h4>Notre-Dame-de-la-Garde</h4>
+                </li>
+                <li class="f">
+                    <img src="assets/images/activites/3_medium/lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="">
+                    <h4>Parc Longchamp</h4>
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            <div>
+                <h4>À propos</h4>
+                <p>Fonctionnement du site</p>
+                <p>Conditions générales de vente</p>
+                <p>Données et confidentialité</p>
+            </div>
+            <div>
+                <h4>Nos hébergements</h4>
+                <p>Charte qualité</p>
+                <p>Soumettre votre hôtel</p>
+            </div>
+            <div>
+                <h4>Assistance</h4>
+                <p>Centre d'aide</p>
+                <p>Nous contacter</p>
+            </div>
+        </footer>
+         
+        <script src="script.js"></script>
+    </body>
+</html>
