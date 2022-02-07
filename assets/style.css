@@ -1,0 +1,239 @@
+/* 1 - DÉFINIR LES ELEMENTS DE LA CHARTE GRAPHIQUE EN TOUT PREMIER (variables, fonts, animations, tc) */
+/* 2 - APPLIQUER LA CHARTE GRAPHIQUE AUX ÉLÉMENTS CONCERNÉS */
+/* 3 - PUIS VIENT LES ÉLÉMENTS HTML RACINE (je rappelle la structure classique d'un layout HTML: header+nav+main+aside+footer */
+/* 4 - ENFIN AJUSTEMENTS, ET COMPOTEMENTS PARTICULIERS */
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+
+/* 1) VARIABLES DE LA CHARTE GRAPHIQUE P2 */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@503&display=swap');
+:root{
+    --bleu: #0065FC;
+    --bleuClair: #DEEBFF;
+    --gris: #F2F2F2;
+    font-family: Raleway;
+}
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+/* 2) APPLIQUER LA CHARTE GRAPHIQUE SUR LES ÉLÉMENTS HTML */
+/* bleu */
+body>header>menu,
+body>nav>div>input[type="submit"],
+body>nav>ul>li>i,
+body>nav>p>i,
+li>div.star
+{color:var(--bleu)}
+body>nav>ul>li>i{background:var(--bleuClair)}
+/* bleu clair */
+
+/* gris */
+body>nav>ul>li{border: 2px solid var(--gris);}
+body>main li, body>aside li, body>section li{
+    background: white;box-shadow: 2px 2px 10px 1px rgb(0 0 0 / 10%); 
+}
+body>nav>div>i{background:var(--gris);}
+ul>li p:last-of-type, main>ul>li p.stars
+{color:var(--gris);}
+ul>li p:last-of-type>i:not(.safe), main>ul>li p.stars>i:not(.safe)
+{color:var(--bleu);} 
+/* silver */
+.active{color:var(--gris);}
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+/* 3) STYLISER LES DIFFERENTS ÉLÉMENTS RACINE DE LA PAGE */
+/* EN PARTANT DU HAUT VERS LE BAS */
+/*** elements normalize ***/
+*{box-sizing: border-box;}
+body{}
+body>*{padding:0 1rem;}
+ul, menu{list-style:none;padding:0;}
+/*** HEADER ***/
+body>header{}
+body>header{display:flex;justify-content: space-between;}
+/* header>img{} */
+/* header>h1{} */
+body>header>menu{display:flex;margin:0;}
+body>header>menu>li{}
+body>header>menu>li>a{padding: 1.5em;color:var(--bleu);display:block;height:100%;text-decoration:none;line-height:3rem;}
+body>header>menu>li.active>a{color:initial;}
+body>header>menu>li>a:hover{border-top:solid;}
+@media only screen and (max-width:500px){
+    body>*{padding:1rem;}
+    body header{display:block;}
+    body header>menu{width:100%;display:flex;}
+    body header>menu>li>a:hover{
+        border-bottom: solid #0065FC;border-top:none;
+    }
+    body header>menu>li{width:50%;text-align:center;}
+    body header>menu>li:last-child{position:absolute;top:0;right:0;font-weight:bold;}
+
+}
+
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+/*** NAV ***/
+    /* LES TITRES */
+body>nav>h2{margin:0;}
+    /* LE PETIT FORMULAIRE */
+body>nav>form{display:flex;border-radius:1em;}
+body>nav>form>*{padding: 1rem;
+    font-size: 1rem;
+    height: 55px;
+}
+body>nav>form>i{border-radius:1em 0 0 1em;background:var(--gris);
+    float:left/* <<==  ce float permet à l'élement de se positionner en haut-gauche de son parent (et donc de se retrouver sur la "line" normal, la premiere line)
+    À utiliser donc quand un élément ne se retrouve pas sur la même "line" ou en bas-gauche de son parent */;
+}
+    /* LE FILTRE */
+body>nav>form>input.user_input___filtre{border:none;
+    border-top:1px solid var(--gris);
+    border-bottom:1px solid var(--gris);
+}
+body>nav>form>input[type="submit"]{background:var(--bleu);
+    border: none;   color:white;font-weight:900;
+    border-radius: 0 1em 1em 0;
+}
+body>nav>ul{display:inline-block/* <<== permet de respecter que la barre de filtre ne prenne pas toute la largeur */;
+    margin-bottom:1rem;font-weight:900;}
+body>nav>ul>span{
+    line-height:1.5rem;padding-left:0;}
+        @media only screen and (max-width: 500px){
+            body>nav>ul>span{display:block;width:100%;}
+        }
+body>nav>ul>*{float: left;
+    display:flex;align-items:center;
+    margin-right:1rem;height:50px /* <<== permet à la propriété box-sizing de s'appliquer sur la hauteur */}
+body>nav>ul>li{border-radius: 2rem;}
+body>nav>ul>li>i{
+    /* border:1px solid; */
+    border-radius: 2rem;padding: 1rem;
+    margin: 0 1rem 0 -3px;
+}
+body>nav>ul>li>span{padding:0 1rem;}
+body>nav>p{}
+body>nav>p>i{border-radius:1em;
+    border:1px solid var(--gris);
+    width: 2rem;height: 2rem;margin-right:1rem;
+    text-align: center;line-height: 2rem !important;
+}
+
+body>nav>p>i{float:left;}
+
+
+/*  */
+/*  */
+/*  */
+
+
+
+/*** MAIN ***/
+
+
+
+body>main{
+    width:62%;
+}
+body>aside{width:35%;float:right;
+}
+body>main,body>aside{
+    padding: 2em;
+    background: var(--gris);
+    border-radius: 1rem;
+}
+@media only screen and (max-width: 500px){
+    html body>main, html body>aside{width:100%;float:none;border-radius:0;}
+    html body>main{background:none;}
+}
+main{}
+main>h2{}
+main>ul{display:flex;flex-flow: row wrap;align-content:space-around}
+ul.annonces>li{border-radius:2em;    background: white;padding:5px;margin:15px;}
+@media only screen and (max-width:500px){
+    ul.annonces>li{width:100%;}
+}
+ul.annonces>li>h4,main>ul>li>p{padding:0 1em;}
+ul.annonces>li>p{}
+main>ul>li{width:29%;}
+main>ul>li>img{border-radius:1em 1em 0 0;}
+main>ul.annonces>li>img{width:100%;}
+main>a{text-decoration: none;
+    color: black;    font-weight: 900;}
+main>ul>li>*:not(img){margin:1em auto;}
+/*** ASIDE ***/
+aside>ul>li{display:flex;height:150px;width:100%;margin-top:2rem !important;}
+aside img{border-radius:2em 0 0 2em;margin-right:1em;}
+aside h2>i{float:right;}
+aside li>div>*{margin-top:0;}
+
+
+
+/*** SECTION ***/
+body>section{margin-top:3rem;}
+/* body>section>ul{    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+} */
+body>section>ul{display:flex;flex-flow:column wrap;
+    height:650px;}
+body>section>ul>li{position:relative;
+    width:20%;overflow:hidden;
+    margin:0 2rem 2rem 0;border-radius:1rem;
+    box-shadow: 0 0 15px .1px var(--gris);
+    text-align:center;
+}
+body>section>ul>li>h4{position: absolute;
+    bottom: 0;
+    background: white;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+}
+/* .safe{vertical-align: top;} */
+/* .f,.fh{max-height:37%;} */
+section li.safe{max-height:50%;}
+section li.safe>img{width:100%;}
+
+@media only screen and (max-width:500px){
+    body>section>ul{height:inherit;display:block;}
+    html body>section>ul>li{width:100%;height:300px;}
+    body>section>ul>li.reajusted>img{
+        position: relative;bottom: 10rem;
+    }
+}
+
+
+
+
+/*** FOOTER ***/
+/* footer{display:flex;justify-content: space-around;background:var(--gris);} */
+footer{padding:2rem;background:var(--gris);}
+footer>*{width:30%;display:inline-block;vertical-align:top;}
+@media only screen and (max-width:500px){
+    footer>*{width: 100%;}
+}
