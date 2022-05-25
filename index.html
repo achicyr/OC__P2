@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booki</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{box-sizing: border-box;}
+        body{margin:0;}
+        ul,menu{list-style: none;margin:0;padding:0;}
+
+        
+        header{display: flex;justify-content: space-between;}
+        header>img{}
+        header>menu{display: flex;gap:1em;}
+        header>menu a{text-decoration:none;text-align: center;
+            color:gray;border-top:solid white;display: block;padding:1em;
+        }
+        header>menu a:hover{color:blue;border-color:blue;}
+
+
+        nav{}
+        nav>h1{}
+        nav>p{}
+        nav>form{}
+        nav>form>fieldset{}
+        nav>form>fieldset>input{}
+        nav>form>fieldset:first-of-type>label{}
+        nav>form>fieldset:first-of-type>label>span:first-of-type{}
+        nav>form>fieldset:first-of-type>label>span:last-of-type{}
+        nav>form>fieldset:last-of-type>label>input{
+            display:none;
+        }
+        nav>form>fieldset:last-of-type>label:not(:first-of-type){
+            border:solid #ececec;
+            display: flex;
+            width:200px;
+            align-items:center;
+            border-radius:2em;
+            gap:1em;
+        }
+        nav>form>fieldset:last-of-type>label:before{
+            color:#1568fc;
+            font-family:"Font Awesome 6 Free";
+            font-weight:900;
+            width: 20px;
+            height: 20px;
+            padding:10px;
+            border-radius:2em;
+            background:#dfecff;
+        }
+        nav>form>fieldset:last-of-type>label:nth-of-type(2):before{content:"\f0d6"}
+    </style> 
+    
+    
+</head>
+<body>
+    <header>
+        <!-- 
+            descripteur de largeur:
+            - x: pour "pixel density descriptor"
+            - w: pour "width descriptor"
+            https://www.alsacreations.com/article/lire/1621-responsive-images-srcset.html
+        -->
+        <!-- 
+            images adaptatives:
+            https://developer.mozilla.org/fr/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images 
+        -->
+<!--         
+        <img srcset="./assets/images/logo/Reservia.svg 799w,
+                     ./assets/images/logo/Reservia@3x.png 3x"
+             src="./assets/images/logo/Reservia@3x.png" alt="logo"
+        /> 
+        <picture>
+            <source media="(max-width: 799px)" srcset="./assets/images/logo/Reservia.svg">
+            <img src="./assets/images/logo/Reservia@3x.png" alt="logo">
+        </picture> 
+-->
+
+        <img srcset="./assets/images/logo/Reservia.svg 799w"
+             sizes="(max-width: 799px) 50vw,
+                    100vw"
+             src="./assets/images/logo/Reservia@3x.png" alt="logo"
+        />
+        <menu>
+            <li><a href="#">Hébergements</a></li>
+            <li><a href="#">Activités</a></li>
+        </menu>
+    </header>
+
+
+    
+    <nav>
+        <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+        <p>En plein centre ville ou en pleine nature</p>
+        <form action="#">
+            <fieldset>
+                <input id="search" placeholder="Marseille, France">
+                <label for="search">
+                    <span>Rechercher</span>
+                    <span class=""></span>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>Filtres</label>
+                <label for="ok"><input id="ok" type="radio"> Économique</label>
+                <input type="radio">
+                <input type="radio">
+                <input type="radio">
+            </fieldset>
+        </form>
+    </nav>
+
+    
+    
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
+    
+    
+</body>
+</html>
