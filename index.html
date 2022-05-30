@@ -6,17 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booki</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         *{box-sizing: border-box;}
-        body{margin:0;}
+        :root{
+            --gray:#f2f2f2;
+            --blue:#DEEBFF;
+            --blue2:#0065fc;
+        }
+        body{margin:0;font-family: 'Raleway', sans-serif;}
+        body>*:not(footer){margin:0 40px;}
         ul,menu{list-style: none;margin:0;padding:0;}
+        
 
         
-        header{display: flex;justify-content: space-between;}
-        header>img{}
+        header{display: flex;align-items: center;justify-content: space-between;height:100px;}
+        header>img{height:60px;}
         header>menu{display: flex;gap:1em;}
         header>menu a{text-decoration:none;text-align: center;
             color:gray;border-top:solid white;display: block;padding:1em;
+            height:100%;display:flex;align-items: center;
         }
         header>menu a:hover{color:blue;border-color:blue;}
 
@@ -25,33 +36,74 @@
         nav>h1{}
         nav>p{}
         nav>form{}
-        nav>form>fieldset{}
+        nav>form>fieldset{border:none;}
         nav>form>fieldset>input{}
-        nav>form>fieldset:first-of-type>label{}
-        nav>form>fieldset:first-of-type>label>span:first-of-type{}
-        nav>form>fieldset:first-of-type>label>span:last-of-type{}
+        nav>form>fieldset:first-of-type{display: flex;height:70px;}
+        nav>form>fieldset:first-of-type>input{padding-left:10px;font-weight:900;border:1px solid var(--gray);border-left:none;border-right:none;}
+        nav>form>fieldset:first-of-type>input::placeholder{color:black;}
+        nav>form>fieldset:first-of-type>label{background:var(--blue2);color:white;border-radius:0 20px 20px 0;padding:0 15px;display: flex;align-items: center;font-weight:700;}
+        nav>form>fieldset:first-of-type:before{
+            font-family:"Font Awesome 6 Free";
+            font-weight:900;
+            border-radius:20px 0 0 20px;
+            content:"\f3c5";
+            padding:0 15px;
+            background:var(--gray);
+            display: flex;
+            align-items: center;
+        }
+        nav>form>fieldset:first-of-type>label>span{}
+        nav>form>fieldset:last-of-type{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
         nav>form>fieldset:last-of-type>label>input{
             display:none;
         }
+        nav>form>fieldset:last-of-type>label:first-of-type{
+            font-weight: 700;
+        }
         nav>form>fieldset:last-of-type>label:not(:first-of-type){
-            border:solid #ececec;
+            border:2px solid #ececec;
             display: flex;
-            width:200px;
             align-items:center;
             border-radius:2em;
             gap:1em;
+            padding-right: 15px;
+            font-weight:700;
         }
         nav>form>fieldset:last-of-type>label:before{
             color:#1568fc;
             font-family:"Font Awesome 6 Free";
             font-weight:900;
-            width: 20px;
-            height: 20px;
-            padding:10px;
+            padding:15px;
             border-radius:2em;
             background:#dfecff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         nav>form>fieldset:last-of-type>label:nth-of-type(2):before{content:"\f0d6"}
+        nav>form>fieldset:last-of-type>label:nth-of-type(3):before{content:"\f183"}
+        nav>form>fieldset:last-of-type>label:nth-of-type(4):before{content:"\f004"}
+        nav>form>fieldset:last-of-type>label:nth-of-type(5):before{content:"\f6d3"}
+        nav>p:last-of-type{font-weight:500;display: flex;align-items: center;}
+        nav>p:last-of-type::before{
+            width:10px;height:10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color:#1568fc;
+            font-family:"Font Awesome 6 Free";
+            font-weight:900;
+            content:"\f129";
+            border-radius:100px;
+            border:solid var(--gray);
+            padding:10px;
+            margin-right:10px;
+        }
+        nav>p{}
     </style> 
     
     
@@ -100,17 +152,17 @@
                 <input id="search" placeholder="Marseille, France">
                 <label for="search">
                     <span>Rechercher</span>
-                    <span class=""></span>
                 </label>
             </fieldset>
             <fieldset>
                 <label>Filtres</label>
-                <label for="ok"><input id="ok" type="radio"> Économique</label>
-                <input type="radio">
-                <input type="radio">
-                <input type="radio">
+                <label for="eco"><input id="eco" type="radio"> Économique</label>
+                <label for="fam"><input id="fam" type="radio"> Familial</label>
+                <label for="rom"><input id="rom" type="radio"> Romantique</label>
+                <label for="ani"><input id="ani" type="radio"> Animal</label>
             </fieldset>
         </form>
+        <p><span>Plus de 500 logements sont disponibles dans cette ville</span></p>
     </nav>
 
     
