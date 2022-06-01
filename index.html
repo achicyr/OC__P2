@@ -197,8 +197,18 @@
         main>section:last-of-type>figure:nth-of-type(1)>img,main>section:last-of-type>figure:nth-of-type(4)>img{
             height:90%;
         }
-        main>section:last-of-type>figure>div{}
-        main>section:last-of-type>figure>div>.star{}
+
+        footer{
+            display: flex;
+            background:var(--gray);
+            padding:40px;
+            margin-top:60px;
+        }
+        footer>ul{width:33%;}
+        footer>ul>li{}
+        footer>ul>li:nth-of-type(3){margin:10px 0;}
+        footer>ul>li>h5{font-size: 17px;}
+        
     </style> 
     
     
@@ -369,7 +379,29 @@
         
     </main>
     <footer>
-
+        <!-- ul*3>(li>h5{À propos})+li*3{Fonctionnement du site} -->
+        <ul>
+            <li>
+                <h5>À propos</h5>
+            </li>
+            <li>Fonctionnement du site</li>
+            <li>Conditions générales de vente</li>
+            <li>Données et confidentialité</li>
+        </ul>
+        <ul>
+            <li>
+                <h5>Nos hébergements</h5>
+            </li>
+            <li>Charte qualité</li>
+            <li>Soumettre votre hôtel</li>
+        </ul>
+        <ul>
+            <li>
+                <h5>Assitance</h5>
+            </li>
+            <li>Centre d'aide</li>
+            <li>Nous contacter</li>
+        </ul>
     </footer>
     
     
