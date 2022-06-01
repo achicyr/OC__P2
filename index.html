@@ -19,6 +19,15 @@
         body{margin:0;font-family: 'Raleway', sans-serif;}
         body>*:not(footer){margin:0 40px;}
         ul,menu{list-style: none;margin:0;padding:0;}
+        nav>form>fieldset:first-of-type:before,
+        nav>form>fieldset:last-of-type>label:before,
+        nav>p:last-of-type::before,
+        main>section>figure div>i:before,
+        main>section>h2>i{
+            font-family:"Font Awesome 6 Free";
+            font-weight:900;
+            font-style: normal;
+        }
         
 
         
@@ -43,8 +52,6 @@
         nav>form>fieldset:first-of-type>input::placeholder{color:black;}
         nav>form>fieldset:first-of-type>label{background:var(--blue2);color:white;border-radius:0 20px 20px 0;padding:0 15px;display: flex;align-items: center;font-weight:700;}
         nav>form>fieldset:first-of-type:before{
-            font-family:"Font Awesome 6 Free";
-            font-weight:900;
             border-radius:20px 0 0 20px;
             content:"\f3c5";
             padding:0 15px;
@@ -75,8 +82,6 @@
         }
         nav>form>fieldset:last-of-type>label:before{
             color:#1568fc;
-            font-family:"Font Awesome 6 Free";
-            font-weight:900;
             padding:15px;
             border-radius:2em;
             background:#dfecff;
@@ -95,8 +100,6 @@
             align-items: center;
             justify-content: center;
             color:#1568fc;
-            font-family:"Font Awesome 6 Free";
-            font-weight:900;
             content:"\f129";
             border-radius:100px;
             border:solid var(--gray);
@@ -104,6 +107,61 @@
             margin-right:10px;
         }
         nav>p{}
+
+
+
+        main{
+            display: flex;
+            justify-content: space-between;
+            gap:20px;
+        }
+        main>section{
+            background:var(--gray);
+            display: flex;
+            flex-flow: wrap;
+            gap:5%;
+            border-radius: 20px;
+            padding:40px;
+        }
+        main>section>h2{margin:0;}
+        main>section>h2>i:before{float:right;margin:0;content:"\f201"}
+        main>section>figure{
+            margin:0;
+            background:white;
+            padding:3px;
+            border-radius: 20px;
+        }
+        main>section img{object-fit: cover;}
+        main>section>figure>*:not(img),main>section>figure>img+div>*{margin:auto 10px;font-size:16px;}
+        main>section>figure>p{margin:5px 10px;}
+        main>section>figure div>i:before{
+            content:"\f005";
+            color:var(--blue2);
+        }
+        main>section>figure div>i.void:before{color:var(--gray);}
+        main>section:first-of-type{width:62%;}
+        main>section:first-of-type>h2{width:100%;}
+        main>section:first-of-type>figure{width:30%;}
+        main>section:first-of-type>figure>img{height:100px;width:100%;border-radius: 20px 20px 0 0;}
+        main>section:first-of-type>figure>h3{}
+        main>section:first-of-type>figure>p{}
+        main>section:first-of-type>figure>div{}
+        main>section:first-of-type>p{font-weight: 900;}
+
+
+        main>section:last-of-type{width:calc(38% - 40px);flex-flow:column;gap:30px;}
+        main>section:last-of-type>h2{}
+        main>section:last-of-type>h2>i{}
+        main>section:last-of-type>figure{width:100%;display: flex;}
+        main>section:last-of-type>figure>img{height:135px;width:40%;margin-right: 10px;border-radius: 20px 0 0 20px;}
+        main>section:last-of-type>figure>div{margin:0;}
+        main>section:last-of-type>figure>div>*:not(div){height:20%;}
+        main>section:last-of-type>figure>div>h3{margin-top:10px;}
+        main>section:last-of-type>figure>div>p{}
+        main>section:last-of-type>figure>div>div{display: flex;height:40%;}
+        main>section:last-of-type>figure>div>div>i{display: flex;align-items: flex-end;}
+        main>section:last-of-type>figure>div{}
+        main>section:last-of-type>figure>div>.star{}
     </style> 
     
     
@@ -159,7 +217,7 @@
                 <label for="eco"><input id="eco" type="radio"> Économique</label>
                 <label for="fam"><input id="fam" type="radio"> Familial</label>
                 <label for="rom"><input id="rom" type="radio"> Romantique</label>
-                <label for="ani"><input id="ani" type="radio"> Animal</label>
+                <label for="ani"><input id="ani" type="radio"> Animaux autorisés</label>
             </fieldset>
         </form>
         <p><span>Plus de 500 logements sont disponibles dans cette ville</span></p>
@@ -168,7 +226,79 @@
     
     
     <main>
+        <!-- section*2>h2{Hébergement à Marseille}+figure*3>img[src="./assets/images/hebergements/4_small/$.jpg"]+h3{Auberge la Cannebière}+p{Nuit à partir de ___€}+div.star>i*5.star -->
+        <section>
+            <h2>Hébergement à Marseille</h2>
+            <figure>
+                <img src="./assets/images/hebergements/4_small/1.jpg" alt="">
+                <h3>Auberge la Cannebière</h3>
+                <p>Nuit à partir de ___€</p>
+                <div><i></i><i></i><i></i><i></i><i class="void"></i></div>
+            </figure>
+            <figure>
+                <img src="./assets/images/hebergements/4_small/2.jpg" alt="">
+                <h3>Auberge la Cannebière</h3>
+                <p>Nuit à partir de ___€</p>
+                <div><i></i><i></i><i></i><i></i><i></i></div>
+            </figure>
+            <figure>
+                <img src="./assets/images/hebergements/4_small/3.jpg" alt="">
+                <h3>Auberge la Cannebière</h3>
+                <p>Nuit à partir de ___€</p>
+                <div><i></i><i></i><i></i><i></i><i class="void"></i></div>
+            </figure>
+            <figure>
+                <img src="./assets/images/hebergements/4_small/4.jpg" alt="">
+                <h3>Auberge la Cannebière</h3>
+                <p>Nuit à partir de ___€</p>
+                <div><i></i><i></i><i></i><i class="void"></i><i class="void"></i></div>
+            </figure>
+            <figure>
+                <img src="./assets/images/hebergements/4_small/5.jpg" alt="">
+                <h3>Auberge la Cannebière</h3>
+                <p>Nuit à partir de ___€</p>
+                <div><i></i><i></i><i></i><i></i><i class="void"></i></div>
+            </figure>
+            <figure>
+                <img src="./assets/images/hebergements/4_small/6.jpg" alt="">
+                <h3>Auberge la Cannebière</h3>
+                <p>Nuit à partir de ___€</p>
+                <div><i></i><i></i><i></i><i></i><i></i></div>
+            </figure>
 
+            <p>Afficher plus</p>
+        </section>
+
+
+
+        <section>
+            <h2>Les plus populaires <i></i></h2>
+            <figure>
+                <img src="./assets/images/hebergements/4_small/7.jpg" alt="">
+                <div>
+                    <h3>Auberge la Cannebière</h3>
+                    <p>Nuit à partir de ___€</p>
+                    <div><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+            </figure>
+            <figure>
+                <img src="./assets/images/hebergements/4_small/8.jpg" alt="">
+                <div>
+                    <h3>Auberge la Cannebière</h3>
+                    <p>Nuit à partir de ___€</p>
+                    <div><i></i><i></i><i></i><i></i><i class="void"></i></div>
+                </div>
+            </figure>
+            <figure>
+                <img src="./assets/images/hebergements/4_small/9.jpg" alt="">
+                <div>
+                    <h3>Auberge la Cannebière</h3>
+                    <p>Nuit à partir de ___€</p>
+                    <div><i></i><i></i><i></i><i></i><i class="void"></i></div>
+                </div>
+            </figure>
+        </section>
+        
     </main>
     <footer>
 
